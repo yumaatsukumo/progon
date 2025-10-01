@@ -93,3 +93,59 @@ h3 {
   cursor: pointer;
   color: white;
 }
+// Lista e filmave
+const movies = [
+  {
+    title: "Filmi 1",
+    thumbnail: "https://via.placeholder.com/200x300?text=Filmi+1",
+    link: "https://dsvplay.com/e/aim8spbaiifs"
+  },
+  {
+    title: "Filmi 2",
+    thumbnail: "https://via.placeholder.com/200x300?text=Filmi+2",
+    link: "https://dsvplay.com/e/VIDEO2"
+  },
+  {
+    title: "Filmi 3",
+    thumbnail: "https://via.placeholder.com/200x300?text=Filmi+3",
+    link: "https://dsvplay.com/e/VIDEO3"
+  },
+  {
+    title: "Filmi 4",
+    thumbnail: "https://via.placeholder.com/200x300?text=Filmi+4",
+    link: "https://dsvplay.com/e/VIDEO4"
+  },
+  {
+    title: "Filmi 5",
+    thumbnail: "https://via.placeholder.com/200x300?text=Filmi+5",
+    link: "https://dsvplay.com/e/VIDEO5"
+  }
+];
+
+// Funksioni që krijon boxes automatikisht
+const container = document.getElementById("movieContainer");
+
+movies.forEach(movie => {
+  const box = document.createElement("div");
+  box.classList.add("movie-box");
+  
+  box.innerHTML = `
+    <img src="${movie.thumbnail}" alt="${movie.title}" onclick="openVideo('${movie.link}')">
+    <div class="movie-title">${movie.title}</div>
+  `;
+  
+  container.appendChild(box);
+});
+
+// Modal functions
+function openVideo(url) {
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("videoFrame").src = url;
+}
+
+function closeVideo() {
+  document.getElementById("modal").style.display = "none";
+  document.getElementById("videoFrame").src = "";
+}
+
+
