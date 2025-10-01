@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Netflix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">MiniFlix 🎬</h1>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Filmi i Javës</h2>
+      <p>Shiko filmin më të ri direkt këtu!</p>
+      <button onclick="openVideo('https://doodstream.example/embed/VIDEO1')">Shiko Tani</button>
+    </div>
+  </section>
+
+  <!-- Rows -->
+  <main>
+    <h3>Filma të Popullarizuar</h3>
+    <div class="row">
+      <img src="https://via.placeholder.com/200x300?text=Video1" onclick="openVideo('https://doodstream.example/embed/VIDEO1')">
+      <img src="https://via.placeholder.com/200x300?text=Video2" onclick="openVideo('https://doodstream.example/embed/VIDEO2')">
+      <img src="https://via.placeholder.com/200x300?text=Video3" onclick="openVideo('https://doodstream.example/embed/VIDEO3')">
+    </div>
+
+    <h3>Seriale</h3>
+    <div class="row">
+      <img src="https://via.placeholder.com/200x300?text=Serial1" onclick="openVideo('https://doodstream.example/embed/VIDEO4')">
+      <img src="https://via.placeholder.com/200x300?text=Serial2" onclick="openVideo('https://doodstream.example/embed/VIDEO5')">
+    </div>
+  </main>
+
+  <!-- Modal Player -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeVideo()">×</span>
+      <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
